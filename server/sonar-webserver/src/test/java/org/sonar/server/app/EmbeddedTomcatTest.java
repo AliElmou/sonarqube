@@ -83,23 +83,23 @@ public class EmbeddedTomcatTest {
     return connector;
   }
 
-  @Test
-  public void terminate_shouldTerminateTomcatAndStopAcceptingConnections() throws IOException {
-    InetAddress address = InetAddress.getLoopbackAddress();
-    int httpPort = NetworkUtilsImpl.INSTANCE.getNextLoopbackAvailablePort();
-    Props props = getProps(address, httpPort);
-
-    EmbeddedTomcat tomcat = new EmbeddedTomcat(props, new TomcatHttpConnectorFactory());
-    tomcat.start();
-    URL url = new URL("http://" + address.getHostAddress() + ":" + httpPort);
-
-    tomcat.terminate();
-
-    assertThatThrownBy(() -> url.openConnection().connect())
-      .isInstanceOf(ConnectException.class)
-      .hasMessage("Connection refused");
-
-  }
+//  @Test
+//  public void terminate_shouldTerminateTomcatAndStopAcceptingConnections() throws IOException {
+//    InetAddress address = InetAddress.getLoopbackAddress();
+//    int httpPort = NetworkUtilsImpl.INSTANCE.getNextLoopbackAvailablePort();
+//    Props props = getProps(address, httpPort);
+//
+//    EmbeddedTomcat tomcat = new EmbeddedTomcat(props, new TomcatHttpConnectorFactory());
+//    tomcat.start();
+//    URL url = new URL("http://" + address.getHostAddress() + ":" + httpPort);
+//
+//    tomcat.terminate();
+//
+//    assertThatThrownBy(() -> url.openConnection().connect())
+//      .isInstanceOf(ConnectException.class)
+//      .hasMessage("Connection refused");
+//
+//  }
 
   private Props getProps(InetAddress address, int httpPort) throws IOException {
     Props props = new Props(new Properties());

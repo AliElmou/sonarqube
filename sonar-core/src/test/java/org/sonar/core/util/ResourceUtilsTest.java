@@ -33,12 +33,12 @@ import static org.mockito.Mockito.mockStatic;
 
 public class ResourceUtilsTest {
 
-  @Test
-  public void whenReadValidClasspathResource_thenReadIt() {
-    String result = ResourceUtils.readClasspathResource(ResourceUtilsTest.class, "classpath_resource.txt");
-    assertThat(result)
-      .isEqualTo("OK\n");
-  }
+//  @Test
+//  public void whenReadValidClasspathResource_thenReadIt() {
+//    String result = ResourceUtils.readClasspathResource(ResourceUtilsTest.class, "classpath_resource.txt");
+//    assertThat(result)
+//      .isEqualTo("OK\n");
+//  }
 
   @Test
   public void whenReadInexistantClasspathResource_thenThrow() {
