@@ -58,7 +58,6 @@ public class MethodValid {
                 if (params.isEmpty()) {
                     return true;
                 }
-
                 String[] parameters = params.split(",");
                 return parameters.length <= MAX_PARAMETERS;
             }
