@@ -32,6 +32,7 @@ public class MethodValidTest {
                 "    int b = 10;\n" +
                 "    System.out.println(a + b);\n" +
                 "}";
+
         assertTrue(MethodValid.isMethodLengthValid(methodCode), "Toutes les lignes de la méthode sont valides.");
     }
 
@@ -43,6 +44,7 @@ public class MethodValidTest {
                 "    int b = 10;\n" +
                 "    System.out.println(\"This line is way too long and should trigger a warning because it exceeds the maximum allowed length.\");\n" +
                 "}";
+
         assertFalse(MethodValid.isMethodLengthValid(methodCode), "Une ligne de la méthode est trop longue.");
     }
 
@@ -52,6 +54,7 @@ public class MethodValidTest {
         String methodCode = "public void myMethod(int a, String b, double c) {\n" +
                 "    System.out.println(a + b + c);\n" +
                 "}";
+
         assertTrue(MethodValid.isMethodParameterCountValid(methodCode), "Une méthode avec 3 paramètres devrait être valide.");
     }
 
@@ -61,6 +64,7 @@ public class MethodValidTest {
         String methodCode = "public void complexMethod(int a, String b, double c, int d, String e, int f) {\n" +
                 "    System.out.println(a + b + c + d + e + f);\n" +
                 "}";
+
         assertFalse(MethodValid.isMethodParameterCountValid(methodCode), "Une méthode avec 6 paramètres devrait être invalide.");
     }
 
@@ -70,6 +74,7 @@ public class MethodValidTest {
         String methodCode = "public void myMethod() {\n" +
                 "    System.out.println(\"Hello, world!\");\n" +
                 "}";
+
         assertTrue(MethodValid.isMethodParameterCountValid(methodCode), "Une méthode sans paramètres devrait être valide.");
     }
 
