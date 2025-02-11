@@ -47,7 +47,6 @@ public class MethodValid {
         if (methodCode == null || methodCode.isEmpty()) {
             return true;
         }
-
         // Extraire les parametre de la méthode
         String[] lines = methodCode.split("\n");
         for (String line : lines) {

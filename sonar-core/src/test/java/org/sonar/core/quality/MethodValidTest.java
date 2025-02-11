@@ -32,6 +32,7 @@ public class MethodValidTest {
                 "    int b = 10;\n" +
                 "    System.out.println(a + b);\n" +
                 "}";
+
         assertTrue(MethodValid.isMethodLengthValid(methodCode), "Toutes les lignes de la méthode sont valides.");
     }
 
